@@ -7,7 +7,7 @@ RUN go get -d github.com/bitly/oauth2_proxy && \
     git checkout $VERSION && \
     CGO_ENABLED=0 go get
 
-FROM arm32v6/alpine:3.8
+FROM centurylink/ca-certs
 
 COPY --from=0 /go/bin/oauth2_proxy /bin/oauth2_proxy
 
